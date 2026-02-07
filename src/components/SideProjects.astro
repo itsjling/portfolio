@@ -1,0 +1,286 @@
+---
+import ContentArea from "@/components/ui/ContentArea.astro";
+---
+
+<section class="mb-20 md:mb-30">
+  <ContentArea>
+    <div class="side-projects">
+      <div class="side-projects__header">
+        <p class="side-projects__eyebrow">Side projects</p>
+        <h3 class="side-projects__title">Experiments that ship</h3>
+        <p class="side-projects__lede">
+          A few small builds I keep polishing in public. Tap a card to see the
+          live project.
+        </p>
+      </div>
+      <div class="side-projects__grid">
+        <a
+          class="project-card"
+          href="https://udolist.com"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open U Do"
+        >
+          <div class="project-card__badge">Live</div>
+          <h4 class="project-card__title">U Do</h4>
+          <p class="project-card__desc">
+            Accountability is the missing to-do list feature
+          </p>
+          <p class="project-card__meta">udolist.com</p>
+          <span class="project-card__cta">Open project</span>
+        </a>
+        <a
+          class="project-card"
+          href="https://scoreboard.justinling.tech"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open Game Scoreboard"
+        >
+          <div class="project-card__badge">Live</div>
+          <h4 class="project-card__title">Game Scoreboard</h4>
+          <p class="project-card__desc">
+            A simple scorekeeper for IRL games
+          </p>
+          <p class="project-card__meta">scoreboard.justinling.tech</p>
+          <span class="project-card__cta">Open project</span>
+        </a>
+      </div>
+    </div>
+  </ContentArea>
+</section>
+
+<style>
+  .side-projects {
+    position: relative;
+    overflow: hidden;
+    border-radius: 36px;
+    padding: 36px 28px;
+    border: 1px solid rgba(42, 0, 63, 0.1);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.98) 0%,
+        rgba(248, 246, 250, 0.98) 100%
+      ),
+      radial-gradient(
+        120% 120% at 0% 0%,
+        rgba(42, 0, 63, 0.06) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+    box-shadow: 0 18px 40px rgba(42, 0, 63, 0.1);
+  }
+
+  .side-projects::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border-radius: 30px;
+    border: 1px dashed rgba(42, 0, 63, 0.12);
+    pointer-events: none;
+  }
+
+  .side-projects__header {
+    max-width: 600px;
+    margin: 0 auto 28px;
+    text-align: center;
+  }
+
+  .side-projects__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(42, 0, 63, 0.8);
+    margin: 0 0 12px;
+  }
+
+  .side-projects__title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800;
+    margin: 0 0 12px;
+    color: #190020;
+  }
+
+  .side-projects__lede {
+    margin: 0;
+    color: rgba(25, 0, 32, 0.72);
+    font-size: 1rem;
+  }
+
+  .side-projects__grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  .project-card {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid rgba(42, 0, 63, 0.12);
+    background: rgba(255, 255, 255, 0.96);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 180ms ease, box-shadow 180ms ease, border 180ms ease;
+  }
+
+  .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(
+      135deg,
+      rgba(42, 0, 63, 0.08),
+      rgba(42, 0, 63, 0.02)
+    );
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+
+  .project-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .project-card__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(42, 0, 63, 0.1);
+    color: rgba(42, 0, 63, 0.85);
+    width: fit-content;
+  }
+
+  .project-card__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1c0a2c;
+  }
+
+  .project-card__desc {
+    margin: 0;
+    font-size: 1rem;
+    color: rgba(28, 10, 44, 0.68);
+  }
+
+  .project-card__meta {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(28, 10, 44, 0.6);
+  }
+
+  .project-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #2a003f;
+  }
+
+  .project-card__cta::after {
+    content: "↗";
+    font-size: 1rem;
+    transform: translateY(-1px);
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(42, 0, 63, 0.16);
+    border-color: rgba(42, 0, 63, 0.2);
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  @media (min-width: 768px) {
+    .side-projects {
+      padding: 48px;
+    }
+
+    .side-projects__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .side-projects {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: linear-gradient(
+          180deg,
+          rgba(16, 14, 20, 0.98) 0%,
+          rgba(10, 10, 14, 0.98) 100%
+        ),
+        radial-gradient(
+          120% 120% at 0% 0%,
+          rgba(120, 70, 160, 0.18) 0%,
+          rgba(10, 10, 14, 0) 55%
+        );
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .side-projects::after {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .side-projects__eyebrow {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .side-projects__title {
+      color: #f7eefb;
+    }
+
+    .side-projects__lede {
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .project-card {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(14, 12, 18, 0.95);
+    }
+
+    .project-card::before {
+      background: linear-gradient(
+        135deg,
+        rgba(214, 176, 255, 0.18),
+        rgba(42, 0, 63, 0.12)
+      );
+    }
+
+    .project-card__badge {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .project-card__title {
+      color: #ffffff;
+    }
+
+    .project-card__meta {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .project-card__desc {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .project-card__cta {
+      color: #f0c8ff;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+  }
+</style>
