@@ -61,12 +61,14 @@ export default function CarouselSlideIndicators({
           alt="Previous slide"
           src={arrow.src}
           width="36"
+          height="30"
           class="dark:hidden"
         />
         <img
           alt="Previous slide"
           src={arrowLight.src}
           width="36"
+          height="30"
           class="hidden dark:block"
         />
       </button>
@@ -87,12 +89,14 @@ export default function CarouselSlideIndicators({
           alt="Next slide"
           src={arrow.src}
           width="36"
+          height="30"
           class="rotate-180 dark:hidden"
         />
         <img
           alt="Next slide"
           src={arrowLight.src}
           width="36"
+          height="30"
           class="hidden rotate-180 dark:block"
         />
       </button>
